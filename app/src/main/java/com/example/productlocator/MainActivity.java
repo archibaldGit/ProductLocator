@@ -1,5 +1,7 @@
 package com.example.productlocator;
 
+import android.app.SearchManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -51,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 product = inputProduct.getText().toString();
+                Intent viewSearch = new Intent(Intent.ACTION_WEB_SEARCH);
+                viewSearch.putExtra(SearchManager.QUERY, product);
             }
         });
     }
