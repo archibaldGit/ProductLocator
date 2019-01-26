@@ -46,10 +46,11 @@ public class MainActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         Button addButton = findViewById(R.id.add);
-        EditText inputProduct = findViewById(R.id.productInput);
+        final EditText inputProduct = findViewById(R.id.productInput);
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                product = inputProduct.getText().toString();
             }
         });
     }
